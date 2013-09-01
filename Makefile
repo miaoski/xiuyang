@@ -1,5 +1,9 @@
 PROGS = ab a.o b.o ManualNameMangling SimpleSection.o SpecialSymbol \
-		target TinyHelloWorld SectionMapping.elf maxheap minibash
+		target TinyHelloWorld SectionMapping.elf maxheap minibash \
+		Program1 Program2 Lib.so
+
+CC = gcc
+CXX = g++
 
 all:	$(PROGS)
 
@@ -24,3 +28,12 @@ TinyHelloWorld: TinyHelloWorld.c TinyHelloWorld.lds
 
 SectionMapping.elf: SectionMapping.c
 	$(CC) -static $< -o $@
+
+Lib.so:	Lib.c Lib.h
+	$(CC) -fPIC -shared -o $@ $<
+
+Program1:	Program1.c Lib.so
+	$(CC) -o $@ $< ./Lib.so
+
+Program2:	Program2.c Lib.so
+	$(CC) -o $@ $< ./Lib.so
