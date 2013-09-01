@@ -1,5 +1,5 @@
 PROGS = ab a.o b.o ManualNameMangling SimpleSection.o SpecialSymbol \
-		target TinyHelloWorld SectionMapping.elf maxheap
+		target TinyHelloWorld SectionMapping.elf maxheap minibash
 
 all:	$(PROGS)
 
