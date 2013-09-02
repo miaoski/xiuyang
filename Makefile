@@ -1,6 +1,6 @@
 PROGS = ab a.o b.o ManualNameMangling SimpleSection.o SpecialSymbol \
 		target TinyHelloWorld SectionMapping.elf maxheap minibash \
-		Program1 Program2 Lib.so pic.so
+		Program1 Program2 Lib.so pic.so 7-5-5
 
 CC = gcc
 CXX = g++
