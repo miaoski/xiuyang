@@ -1,7 +1,8 @@
 PROGS = ab a.o b.o ManualNameMangling SimpleSection.o SpecialSymbol \
 		target TinyHelloWorld SectionMapping.elf maxheap minibash \
 		Program1 Program2 Lib.so pic.so 7-5-5  \
-		7-6-2-a1.so 7-6-2-a2.so 7-6-2-b1.so 7-6-2-b2.so 7-6-2-main
+		7-6-2-a1.so 7-6-2-a2.so 7-6-2-b1.so 7-6-2-b2.so 7-6-2-main \
+		RunSoSimple
 
 CC = gcc
 CXX = g++
@@ -56,3 +57,6 @@ Program2:	Program2.c Lib.so
 
 7-6-2-main:	7-6-2-main.c 7-6-2-b1.so 7-6-2-b2.so
 	$(CC) $< 7-6-2-b1.so 7-6-2-b2.so -o $@ -Xlinker -rpath ./
+
+RunSoSimple: RunSoSimple.c
+	$(CC) -o $@ $< -ldl
