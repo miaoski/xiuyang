@@ -2,7 +2,7 @@ PROGS = ab a.o b.o ManualNameMangling SimpleSection.o SpecialSymbol \
 		target TinyHelloWorld SectionMapping.elf maxheap minibash \
 		Program1 Program2 Lib.so pic.so 7-5-5  \
 		7-6-2-a1.so 7-6-2-a2.so 7-6-2-b1.so 7-6-2-b2.so 7-6-2-main \
-		RunSoSimple
+		RunSoSimple 8-2-3-symver.o
 
 CC = gcc
 CXX = g++
